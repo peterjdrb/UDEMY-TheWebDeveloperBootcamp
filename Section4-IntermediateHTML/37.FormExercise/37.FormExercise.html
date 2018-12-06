@@ -14,11 +14,11 @@
 		
 		<br>
 		<label for="Male">Male</label>
-		<input id="Male" type="radio" name="GenderChoice" value="Male">
+		<input id="Male" type="radio" name="Gender" value="Male">
 		<label for="Female">Female</label>
-		<input id="Female" type="radio" name="GenderChoice" value="Female">
+		<input id="Female" type="radio" name="Gender" value="Female">
 		<label for="Other">Other</label>
-		<input id="Other" type="radio" name="GenderChoice" value="Other">
+		<input id="Other" type="radio" name="Gender" value="Other">
 
 		<br>
 		<label id="Email">Email: </label>
@@ -27,29 +27,33 @@
 		<input id="Password" type="Password" name="Password" placeholder="your Password" required minlength="5" maxlength="10">
 
 		<br>
-		<label>Birthday: </label>
-		<select name="dobDay">
-			<option>01</option>
-			<option>02</option>
-			<option>03</option>
-			<option>04</option>
-		</select>
-		<select name="dobMon">
-			<option>Jan</option>
-			<option>Feb</option>
-			<option>Mar</option>
-			<option>Apr</option>
-		</select>
-		<select name="dobYear">
-			<option>2000</option>
-			<option>2001</option>
-			<option>2002</option>
-			<option>2003</option>
-		</select>
+		<label>Birthday:
+			<select name="dobDay">
+				<option>Day</option>
+				<option>01</option>
+				<option>02</option>
+				<option>03</option>
+				<option>04</option>
+			</select>
+			<select name="dobMon">
+				<option>Month</option>
+				<option>Jan</option>
+				<option>Feb</option>
+				<option>Mar</option>
+				<option>Apr</option>
+			</select>
+			<select name="dobYear">
+				<option>Year</option>
+				<option>2000</option>
+				<option>2001</option>
+				<option>2002</option>
+				<option>2003</option>
+			</select>
+		</label>
 
 		<br>
 		<label id="terms">I agree to the terms and conditions</label>
-		<input id="terms" type="checkbox" name="terms" required>
+		<input id="terms" type="checkbox" name="terms" value="true" required>
 
 		<br>
 		<input type="submit" value="Register">
