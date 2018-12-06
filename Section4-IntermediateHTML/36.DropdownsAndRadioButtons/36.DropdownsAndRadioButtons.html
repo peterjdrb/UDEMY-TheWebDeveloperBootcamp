@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dropdown and Radio buttons</title>
+</head>
+<body>
+	<h1>Dropdown and Radio buttons</h1>
+
+	<form>
+
+		<p>Do you like cats or dogs?</p>
+		<label for="dogs">Dogs:</label>
+		<input id="dogs" type="radio" name="petChoice" value="dog">
+		<br>
+		<label for="cats">Cats:</label>
+		<input id="cats" type="radio" name="petChoice" value="cat">
+
+		<br>
+		<p>What's your favourite colour?</p>
+		<select name="colour">
+			<option value="Red">Bright Red</option>
+			<option value="Red">Dark Red</option>
+			<option value="Yellow">Bright Yellow</option>
+			<option value="Yellow">Dark Yellow</option>
+			<option value="Green">Bright Green</option>
+			<option value="Green">Dark Green</option>
+		</select>
+		<br>
+
+		<p>Please enter a description of what your chosen pet would look like.</p>
+		<textarea rows="10" cols="50" name="petDescription"></textarea>
+		<br>
+		
+		<input type="Submit" value="Send Pet Choice">
+	</form>
+</body>
+</html>
