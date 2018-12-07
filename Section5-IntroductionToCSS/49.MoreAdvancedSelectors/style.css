@@ -1,0 +1,30 @@
+/*Stars*/
+*	{
+	border: 1px solid red;
+	background-color: #f5f5dc
+}
+
+/*Descendent Selector*/
+ul li {
+	background-color: #FFFFFF
+	border: 1px solid transparent;
+}
+
+/*Adjacent Selector*/
+h1 + a {
+	background-color: green;
+}
+
+/*Attribute Selector*/
+a[href="https://www.google.com"] {
+	background-color: cyan;
+}
+
+/*nth of Type*/
+li:nth-of-type(odd){
+	background-color: #dda0dd;
+}
+
+li:nth-of-type(even){
+	background-color: #ffebcd;
+}
