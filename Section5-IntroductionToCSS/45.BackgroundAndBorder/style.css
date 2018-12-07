@@ -1,0 +1,20 @@
+h1	{
+	color: #000000;
+/*	border-color: #FFFFFF; 
+	border-width: 2px;
+	border-style: dashed;*/
+	border: 3px dashed #FFFFFF
+}
+
+li	{
+	color: rgb(200,0,0);
+}
+
+h4 {
+	color: rgba(255,0,255, 0.5);
+/*	background-color: #45BB00*/
+}
+
+body {
+	background: url(https://i.ebayimg.com/images/i/321904358358-0-1/s-l1000.jpg)
+}
