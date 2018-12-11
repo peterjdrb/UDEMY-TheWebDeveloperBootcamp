@@ -1,25 +1,15 @@
-/*font-family*/
-
-p {
-	font-family: Times New Roman;
-}
-
-h1 {
-	font-family: Bakersville;
-}
-
-/*font-size*/
-
 body {
 	font-size: 10px;
 }
 
-h1 {
-	font-size: 5.0em;
+p {
+	font-family: Times New Roman;
+	font-size: 2.0em;
 }
 
-p {
-	font-size: 2.0em;
+h1 {
+	font-family: Bakersville;
+	font-size: 5.0em;
 }
 
 span {
