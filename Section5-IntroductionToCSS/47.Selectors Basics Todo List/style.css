@@ -1,0 +1,28 @@
+body {
+	background: url(https://i.ebayimg.com/images/i/321904358358-0-1/s-l1000.jpg)
+}
+
+h1	{
+	color: #000000;
+	border: 3px dashed #FFFFFF
+}
+
+
+h4 {
+	color: rgba(255,0,255, 0.5);
+}
+
+li	{
+	color: rgb(200,0,0);
+	border: 2px solid transparent;
+}
+
+#urgent{
+	border: 2px solid #FF0000;
+	background-color: #FFFF00;
+}
+
+.done{
+	text-decoration: line-through;
+	color: #00FF00;
+}
