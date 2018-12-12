@@ -1,0 +1,23 @@
+p {
+	font-family: 'Aclonica', sans-serif;
+
+	/*Content - Width and Height*/
+	/*width: 200px;*/
+	width: 50%;
+	height: 20px;
+
+	/*Border*/
+	border: 2px solid blue;
+
+	/*Padding*/
+	padding: 10px;
+
+	/*Margin*/
+/*	margin-top: 20px;
+	margin-right: 40px;
+	margin-bottom: 80px;
+	margin-left: 160px;*/
+	/*margin: 20px 40px 80px 160px;*/
+	margin: 10px auto;
+
+}
