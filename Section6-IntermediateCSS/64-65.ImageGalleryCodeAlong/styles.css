@@ -1,0 +1,14 @@
+h1 {
+	font-family: 'Gamja Flower', cursive;
+	margin-left: 1.66%;
+	font-size: 48px;
+	border-bottom: 2px solid blue;
+	width: 93%
+}
+
+img {
+	width: 30%;
+	float: left;
+	margin-left: 1.66%;
+	margin-bottom: 1.66%;
+}
