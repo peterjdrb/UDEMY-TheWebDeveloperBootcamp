@@ -11,12 +11,12 @@ table tr td {
 	height: 100px;
 }
 
-table tr td:nth-of-type(2) {
+.boardVertical {
 	border-right: 1px solid black;
 	border-left: 1px solid black;
 }
 
-table tr:nth-of-type(2) td{
+.boardHorizontal {
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
 }
