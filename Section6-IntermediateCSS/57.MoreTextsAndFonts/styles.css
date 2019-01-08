@@ -1,0 +1,23 @@
+body {
+	font-size: 10px;
+}
+
+h1 {
+	font-family: Bakersville;
+	font-size: 5.0em;
+	text-align: center;
+}
+
+p {
+	font-family: Times New Roman;
+	font-size: 2.0em;
+	line-height: 1.25;
+}
+
+span {
+	font-family: Cambria;
+	font-size: 2.0em;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-decoration: underline;
+}
