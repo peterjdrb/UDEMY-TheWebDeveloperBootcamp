@@ -5,7 +5,7 @@ body	{
 
 /*Descendent Selector*/
 ul li {
-	background-color: #FFFFFF
+	background-color: #FFFFFF;
 	border: 1px solid transparent;
 }
 
