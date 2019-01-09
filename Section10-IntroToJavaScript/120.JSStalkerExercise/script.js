@@ -9,4 +9,4 @@ if (age > 1) {
 	console.log("You are " + age + " years old.");
 } else {
 	console.log("You are " + age + " year old.");
-};
+}
