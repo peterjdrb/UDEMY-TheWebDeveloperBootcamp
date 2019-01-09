@@ -11,7 +11,3 @@ else if (guess < secretNumber) {
 else if (guess > secretNumber) {
 	alert("Your guess is higher than the secretNumber. Try again!");
 }
-
-
-
-// alert("Sorry, try again :(");
