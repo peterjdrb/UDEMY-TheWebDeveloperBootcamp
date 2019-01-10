@@ -1,7 +1,7 @@
 // V1
 var input = new String();
 
-while (input.toLowerCase() != "yes" && input.toLowerCase() != "yeah") {
+while (input.toLowerCase() !== "yes" && input.toLowerCase() !== "yeah") {
 	input = prompt("Are we there yet V1?");
 }
 
