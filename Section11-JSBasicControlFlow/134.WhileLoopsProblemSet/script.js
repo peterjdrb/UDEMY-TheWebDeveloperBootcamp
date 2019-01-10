@@ -30,4 +30,4 @@ while (num4 <= 50) {
 		console.log(num4);
 	}
 	num4++;
-};
+}
