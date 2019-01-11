@@ -27,4 +27,4 @@ movies.forEach(function(movie) {
 	} else {
 		console.log("You have not seen \"" + movie.title + "\" - " + movie.rating + " stars");
 	}
-})
+});
