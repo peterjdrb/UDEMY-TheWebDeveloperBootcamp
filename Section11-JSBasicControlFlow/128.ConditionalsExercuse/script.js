@@ -12,6 +12,6 @@ if (age%2 === 1) {
 	alert("your age is odd!");
 }
 
-if ((Math.sqrt(age))%1 === 0) {
+if (Math.sqrt(age)%1 === 0) {
 	alert("perfect square!");
 }

@@ -26,7 +26,7 @@ function sumArray (arrayInput){
 
 	arrayInput.forEach(function(currentNum) {
 		sumOfArray += currentNum;
-	})
+	});
 
 	return sumOfArray;
 }
@@ -45,13 +45,13 @@ function max (arrayInput){
 
 console.log("printReverse([1,2,3,4])");
 printReverse([1,2,3,4]);
-console.log('printReverse(["a", "b", "c"])');
+console.log("printReverse(['a', 'b', 'c'])");
 printReverse(["a", "b", "c"]);
 
-console.log('isUniform([1,1,1,1]) ' + isUniform([1,1,1,1]));
-console.log('isUniform([2,1,1,1]) ' + isUniform([2,1,1,1]));
-console.log('isUniform(["a", "b", "p"]) ' + isUniform(["a", "b", "p"]));
-console.log('isUniform(["b", "b", "b"]) ' + isUniform(["b", "b", "b"]));
+console.log("isUniform([1,1,1,1]) " + isUniform([1,1,1,1]));
+console.log("isUniform([2,1,1,1]) " + isUniform([2,1,1,1]));
+console.log("isUniform(['a', 'b', 'p']) " + isUniform(["a", "b", "p"]));
+console.log("isUniform(['b', 'b', 'b']) " + isUniform(["b", "b", "b"]));
 
 console.log("sumArray([1,2,3]) is " + sumArray([1,2,3]));
 console.log("sumArray([10,3,10,4]) is " + sumArray([10,3,10,4]));
