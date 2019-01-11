@@ -5,19 +5,16 @@ function printReverse(arrayInput) {
 }
 
 function isUniform(arrayInput) {
-	if (arrayInput.length === 0 || arrayInput.length === 1) {
-		return true;
-	}
-
 	var uniform = true;
 	var element = arrayInput[0];
-	for (var i = 1; i < arrayInput.length; i++) {
-		if (arrayInput[i] !== element) {
-			uniform = false;
-			break;
+	if (arrayInput.length !== 0 || arrayInput.length !== 1) {
+		for (var i = 1; i < arrayInput.length; i++) {
+			if (arrayInput[i] !== element) {
+				uniform = false;
+				break;
+			}
 		}
 	}
-
 	return uniform;
 }
 
