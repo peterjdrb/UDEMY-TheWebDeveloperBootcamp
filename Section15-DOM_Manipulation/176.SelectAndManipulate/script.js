@@ -12,5 +12,5 @@ setInterval(function() {
 	} else {
 		body.style.background = "white";
 	}
-	isWhite = !isWhite
-}, 1000)
+	isWhite = !isWhite;
+}, 1000);
