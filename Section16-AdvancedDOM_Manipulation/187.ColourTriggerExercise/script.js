@@ -9,4 +9,4 @@ button.addEventListener("click", function(){
 	}
 
 	whiteBackground = !whiteBackground;
-})
+});

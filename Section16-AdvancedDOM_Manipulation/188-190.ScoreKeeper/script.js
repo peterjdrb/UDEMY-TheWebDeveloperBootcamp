@@ -11,6 +11,29 @@ var player2Score = 0;
 var GameFinished = false;
 var winnerScore = Number(inputNumber.value);
 
+function hasGameFinished(){
+	if (player1Score === winnerScore) {
+		player1Display.classList.toggle("winner");
+		GameFinished = true;
+	}
+	else if (player2Score === winnerScore) {
+		player2Display.classList.toggle("winner");
+		GameFinished = true;
+	}
+}
+
+function resetGameState(){
+	player1Score = 0;
+	player1Display.textContent = "0";
+	player1Display.classList.remove("winner");
+
+	player2Score = 0;
+	player2Display.textContent = "0";
+	player2Display.classList.remove("winner");
+
+	GameFinished = false;
+}
+
 reset.addEventListener("click", function(){
 	resetGameState();
 });
@@ -34,27 +57,5 @@ player2Button.addEventListener("click", function(){
 inputNumber.addEventListener("change", function(){
 	winnerScore = Number(inputNumber.value);
 	playUptoMessage.textContent = inputNumber.value
+	hasGameFinished();
 });
-
-function hasGameFinished(){
-	if (player1Score === winnerScore) {
-		player1Display.classList.toggle("winner");
-		GameFinished = true;
-	}
-	else if (player2Score === winnerScore) {
-		player2Display.classList.toggle("winner");
-		GameFinished = true;
-	}
-}
-
-function resetGameState(){
-	player1Score = 0;
-	player1Display.textContent = "0";
-	player1Display.classList.remove("winner");
-
-	player2Score = 0;
-	player2Display.textContent = "0";
-	player2Display.classList.remove("winner");
-
-	GameFinished = false;
-}
