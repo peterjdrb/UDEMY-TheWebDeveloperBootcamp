@@ -1,9 +1,9 @@
-var colours = generateRandomColours(6);
+var colours = [];
 var pickedColour;
 var squares = document.querySelectorAll(".square");
 var colourDisplay = document.getElementById("colourDisplay");
-var correctColourPicked = false;
 var resultDisplay = document.querySelector("#result")
+var resetButton = document.getElementById("reset");
 
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
@@ -16,13 +16,13 @@ function setColours () {
 		squares[i].addEventListener( "click", function () {
 			var clickedColour = this.style.backgroundColor;
 
-			if (clickedColour === pickedColour) {
-				correctColourPicked = true;
-				resultDisplay.textContent = "Correct"
+			if (clickedColour === pickedColour) {;
+				resultDisplay.textContent = "Correct";
 				changeColours();
+				resetButton.textContent = "Play Again?";
 			} else {
-				this.style.background = "white";
-				resultDisplay.textContent = "Try Again"
+				this.style.background = "#232323";
+				resultDisplay.textContent = "Try Again";
 			};
 		}); 
 	}
@@ -54,5 +54,15 @@ function generateRandomColours (numOfColours) {
 	return arr;
 }
 
-setColours();
-setWinningSquare();
+function resetGame () {
+	resetButton.textContent = "New Game";
+	colours = generateRandomColours(6);
+	setWinningSquare();
+	setColours();
+}
+
+resetButton.addEventListener("click", function () {
+	resetGame();
+});
+
+resetGame();
