@@ -39,7 +39,6 @@ inputNumber.addEventListener("change", function(){
 function hasGameFinished(){
 	if (player1Score === winnerScore) {
 		player1Display.classList.toggle("winner");
-
 		GameFinished = true;
 	}
 	else if (player2Score === winnerScore) {
@@ -50,12 +49,12 @@ function hasGameFinished(){
 
 function resetGameState(){
 	player1Score = 0;
-	player2Score = 0;
-
 	player1Display.textContent = "0";
-	player2Display.textContent = "0";
-
 	player1Display.classList.remove("winner");
+
+	player2Score = 0;
+	player2Display.textContent = "0";
 	player2Display.classList.remove("winner");
+
 	GameFinished = false;
 }
