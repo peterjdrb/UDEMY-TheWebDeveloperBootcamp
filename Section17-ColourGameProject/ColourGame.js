@@ -8,10 +8,15 @@ var btnEasy = document.getElementById("btnEasy");
 var btnHard = document.getElementById("btnHard");
 var totalSquares = 6;
 btnHard.classList.toggle("selected");
-resetGame(totalSquares);
 
 function getRndInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) ) + min;
+	return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+function changeColours () {
+	for (i=0; i<squares.length; i++){
+		squares[i].style.background = pickedColour;
+	}
 }
 
 function setColours () {
@@ -22,7 +27,7 @@ function setColours () {
 		squares[i].addEventListener( "click", function () {
 			var clickedColour = this.style.backgroundColor;
 
-			if (clickedColour === pickedColour) {;
+			if (clickedColour === pickedColour) {
 				resultDisplay.textContent = "Correct";
 				changeColours();
 				btnReset.textContent = "Play Again?";
@@ -34,30 +39,33 @@ function setColours () {
 	}
 }
 
-function setWinningSquare () {
-	pickedColour = pickColour();
-	colourDisplay.textContent = pickedColour;
-}
-
-function changeColours () {
-	for (i=0; i<squares.length; i++){
-		squares[i].style.background = pickedColour;
-	}
-}
-
 function pickColour () {
 	var random = Math.floor(Math.random() * colours.length);
 	return colours[random];
 }
 
+function setWinningSquare () {
+	pickedColour = pickColour();
+	colourDisplay.textContent = pickedColour;
+}
+
 function generateRandomColours (numOfColours) {
-	var arr = []
+	var arr = [];
 
 	for (i=0; i<numOfColours; i++){
 		arr[i] = "rgb(" + getRndInteger(0,255) + ", " + getRndInteger(0,255) + ", " +getRndInteger(0,255) + ")";
 	}
 
 	return arr;
+}
+
+function setupGameBoard (squareNum) {
+	var squareContainer = document.getElementById("squareContainer");
+	squareContainer.innerHTML = "";
+
+	for (i=0; i<totalSquares; i++) {
+		squareContainer.innerHTML += "<div class='square'></div>";
+	}
 }
 
 function resetGame (squareNum) {
@@ -67,15 +75,6 @@ function resetGame (squareNum) {
 	setupGameBoard(squareNum);
 	setWinningSquare();
 	setColours();
-}
-
-function setupGameBoard (squareNum) {
-	var squareContainer = document.getElementById("squareContainer");
-	squareContainer.innerHTML = "";
-
-	for (i=0; i<totalSquares; i++) {
-		squareContainer.innerHTML += '<div class="square"></div>';
-	}
 }
 
 btnReset.addEventListener("click", function () {
@@ -96,7 +95,7 @@ btnEasy.addEventListener("click", function(){
 	if (!btnEasy.classList.contains("selected")) {
 		totalSquares = 3;
 		difficultySetting(totalSquares);
-	};
+	}
 })
 
 btnHard.addEventListener("click", function(){
@@ -105,3 +104,5 @@ btnHard.addEventListener("click", function(){
 		difficultySetting(totalSquares);
 	}
 })
+
+resetGame(totalSquares);
