@@ -1,0 +1,16 @@
+body {
+	text-align: center;
+}
+
+#squareContainer {
+	margin: 0 auto;
+	max-width: 600px;
+}
+
+.square {
+	width: 30%;
+	background: purple;
+	padding-bottom: 30%;
+	float: left;
+	margin: 1.66%
+}
