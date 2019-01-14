@@ -55,7 +55,7 @@ player2Button.addEventListener("click", function(){
 });
 
 inputNumber.addEventListener("change", function(){
-	winnerScore = Number(inputNumber.value);
-	playUptoMessage.textContent = inputNumber.value
-	hasGameFinished();
+	winnerScore = Number(this.value);
+	playUptoMessage.textContent = this.value;
+	resetGameState();
 });
