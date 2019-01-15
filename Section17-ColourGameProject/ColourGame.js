@@ -4,6 +4,7 @@ var resultDisplay = document.querySelector("#message");
 var btnReset = document.getElementById("reset");
 var btnEasy = document.getElementById("btnEasy");
 var btnHard = document.getElementById("btnHard");
+var squares = document.querySelectorAll(".square");
 const easy = 4;
 const hard = 20;
 var numOfSquares = hard;
@@ -19,24 +20,27 @@ function changeColours (squares) {
 	}
 }
 
+function setupSquareButton (square) {
+	squares[i].addEventListener( "click", function () {
+		var clickedColour = this.style.backgroundColor;
+
+		if (clickedColour === pickedColour) {
+			resultDisplay.textContent = "Correct";
+			changeColours(squares);
+			btnReset.textContent = "Play Again?";
+		} else {
+			this.style.background = bodyColour;
+			resultDisplay.textContent = "Try Again";
+		}
+	}); 
+}
+
 function setColours () {
-	var squares = document.querySelectorAll(".square");
+	squares = document.querySelectorAll(".square");
 	for (i=0; i<hard; i++){
 		if (i<numOfSquares) {
 			squares[i].style.background = colours[i];
-
-			squares[i].addEventListener( "click", function () {
-				var clickedColour = this.style.backgroundColor;
-
-				if (clickedColour === pickedColour) {
-					resultDisplay.textContent = "Correct";
-					changeColours(squares);
-					btnReset.textContent = "Play Again?";
-				} else {
-					this.style.background = bodyColour;
-					resultDisplay.textContent = "Try Again";
-				}
-			}); 
+			setupSquareButton(squares[i]);
 		} else {
 			squares[i].style.background = bodyColour;
 		}
