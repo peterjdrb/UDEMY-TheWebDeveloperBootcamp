@@ -14,7 +14,7 @@ function getRndInteger(min, max) {
 }
 
 function changeColours (squares) {
-	for (i=0; i<squares.length; i++){
+	for (i=0; i<numOfSquares; i++){
 		squares[i].style.background = pickedColour;
 	}
 }
