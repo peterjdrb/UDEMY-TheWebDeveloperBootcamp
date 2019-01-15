@@ -9,11 +9,11 @@ body {
 }
 
 .square {
-	width: 30%;
+	width: 21%;
 	background-color: purple;
-	padding-bottom: 30%;
+	padding-bottom: 21%;
 	float: left;
-	margin: 1.66%
+	margin: 1.5%
 }
 
 #stripe {
