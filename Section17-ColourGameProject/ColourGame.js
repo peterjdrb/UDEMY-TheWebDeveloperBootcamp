@@ -8,13 +8,13 @@ const easy = 4;
 const hard = 20;
 var numOfSquares = hard;
 var bodyColour = document.body.style.backgroundColor;
-console.log()
+
 function getRndInteger(min, max) {
 	return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
 function changeColours (squares) {
-	for (i=0; i<numOfSquares; i++){
+	for (i=0; i<squares.length; i++){
 		squares[i].style.background = pickedColour;
 	}
 }
