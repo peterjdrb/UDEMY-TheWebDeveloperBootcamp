@@ -1,40 +1,46 @@
 var colours = [];
 var pickedColour;
-var resultDisplay = document.querySelector("#result");
+var resultDisplay = document.querySelector("#message");
 var btnReset = document.getElementById("reset");
 var btnEasy = document.getElementById("btnEasy");
 var btnHard = document.getElementById("btnHard");
 const easy = 4;
 const hard = 20;
-var totalSquares = hard;
-
+var numOfSquares = hard;
+var bodyColour = document.body.style.backgroundColor;
+console.log()
 function getRndInteger(min, max) {
 	return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
 function changeColours (squares) {
-	for (i=0; i<squares.length; i++){
+	for (i=0; i<numOfSquares; i++){
 		squares[i].style.background = pickedColour;
 	}
 }
 
 function setColours () {
 	var squares = document.querySelectorAll(".square");
-	for (i=0; i<squares.length; i++){
-		squares[i].style.background = colours[i];
+	for (i=0; i<hard; i++){
+		if (i<numOfSquares) {
+			squares[i].style.background = colours[i];
 
-		squares[i].addEventListener( "click", function () {
-			var clickedColour = this.style.backgroundColor;
+			squares[i].addEventListener( "click", function () {
+				var clickedColour = this.style.backgroundColor;
 
-			if (clickedColour === pickedColour) {
-				resultDisplay.textContent = "Correct";
-				changeColours(squares);
-				btnReset.textContent = "Play Again?";
-			} else {
-				this.style.background = "#232323";
-				resultDisplay.textContent = "Try Again";
-			}
-		}); 
+				if (clickedColour === pickedColour) {
+					resultDisplay.textContent = "Correct";
+					changeColours(squares);
+					btnReset.textContent = "Play Again?";
+				} else {
+					this.style.background = bodyColour;
+					resultDisplay.textContent = "Try Again";
+				}
+			}); 
+		} else {
+			squares[i].style.background = bodyColour;
+		}
+		
 	}
 }
 
@@ -59,51 +65,52 @@ function generateRandomColours (numOfColours) {
 	return arr;
 }
 
-function setupGameBoard (squareNum) {
+function setupGameBoard () {
 	var squareContainer = document.getElementById("squareContainer");
 	squareContainer.innerHTML = "";
 
-	for (i=0; i<totalSquares; i++) {
+	for (i=0; i<hard; i++) {
 		squareContainer.innerHTML += "<div class='square'></div>";
 	}
 }
 
-function resetGame (squareNum) {
+function resetGame () {
 	btnReset.textContent = "New Game";
 	resultDisplay.textContent = "";
-	colours = generateRandomColours(squareNum);
-	setupGameBoard(squareNum);
+	colours = generateRandomColours(numOfSquares);
+	// setupGameBoard(numOfSquares);
 	setWinningSquare();
 	setColours();
 }
 
 btnReset.addEventListener("click", function () {
 	if (btnEasy.classList.contains("selected")) {
-		resetGame(totalSquares);
+		resetGame(numOfSquares);
 	} else {
-		resetGame(totalSquares);
+		resetGame(numOfSquares);
 	}
 });
 
-function difficultySetting (squareNum) {
+function difficultySetting () {
 	btnEasy.classList.toggle("selected");
 	btnHard.classList.toggle("selected");
-	resetGame(squareNum);
+	resetGame(numOfSquares);
 }
 
 btnEasy.addEventListener("click", function(){
 	if (!this.classList.contains("selected")) {
-		totalSquares = easy;
-		difficultySetting(totalSquares);
+		numOfSquares = easy;
+		difficultySetting(numOfSquares);
 	}
 });
 
 btnHard.addEventListener("click", function(){
 	if (!this.classList.contains("selected")) {
-		totalSquares = hard;
-		difficultySetting(totalSquares);
+		numOfSquares = hard;
+		difficultySetting(numOfSquares);
 	}
 });
 
 btnHard.classList.toggle("selected");
-resetGame(totalSquares);
+setupGameBoard();
+resetGame(numOfSquares);

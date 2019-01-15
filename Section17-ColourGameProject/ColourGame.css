@@ -1,6 +1,7 @@
 body {
 	text-align: center;
 	background-color: #232323;
+	font-family: 'Coiny', cursive;
 }
 
 #squareContainer {
@@ -10,10 +11,11 @@ body {
 
 .square {
 	width: 21%;
-	background-color: purple;
 	padding-bottom: 21%;
 	float: left;
-	margin: 1.5%
+	margin: 1.5%;
+	border-radius: 10%;
+	transition: all 0.25s;
 }
 
 #stripe {
@@ -23,9 +25,43 @@ body {
 }
 
 h1 {
+	background-color: steelblue;
 	color: white;
+	line-height: 1.1;
+	margin: 0 0;
+}
+
+button {
+	border: none;
+	background: none;
+	text-transform: uppercase;
+	height: 100%;
+	color: steelblue;
+	font-size: inherit;
+	transition: background 0.25s;
 }
 
 .selected {
-	border: 3px solid red;
+	background-color: steelblue;
+	color: white;
+	transition: all 0.25s;
+}
+
+#colourDisplay {
+	text-transform: uppercase;
+	font-size: 200%;
+}
+
+#message {
+	display: inline-block;
+	width: 20%;
+}
+
+button:hover {
+	background-color: steelblue;
+	color: white;
+}
+
+.square:hover {
+	transform: scale(1.15);
 }
