@@ -96,7 +96,7 @@ btnEasy.addEventListener("click", function(){
 		totalSquares = easy;
 		difficultySetting(totalSquares);
 	}
-})
+});
 
 btnHard.addEventListener("click", function(){
 	if (!this.classList.contains("selected")) {
