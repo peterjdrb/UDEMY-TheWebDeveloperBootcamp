@@ -1,9 +1,4 @@
 try	{
-	// var preference = {
-	// color : "red",
-	// border: "2px solid blue",
-	// fontSize: "20px"
-	// };
 
 	$("div").css("background", "purple");
 	$("div.highlight").css("width", "200px");
