@@ -1,0 +1,7 @@
+.buttonPressedStyle {
+	border: 3px dashed green
+}
+
+.buttonHover {
+	border: none;
+}
