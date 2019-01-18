@@ -1,10 +1,15 @@
 body {
+	/*background-image: linear-gradient(to bottom right, red, yellow);*/
 	background-color: #87cefa;
 	font-size: 20px;
 }
 
+h1 {
+	width: 60%;
+}
+
 #toDoList {
-	width: 360px;
+	width: 500px;
 	margin: 0 auto;
 }
 

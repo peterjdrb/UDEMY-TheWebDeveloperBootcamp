@@ -11,9 +11,14 @@ $("#newItem").on("keypress", function(event){
 
 		itemList.find("span").on("click", function(event){
 			event.stopPropagation();
-			$(this).parent().fadeOut(250, function(){
-				$(this).remove()
+			$(this).parent().fadeOut(500, function(){
+				$(this).remove();
 			});
 		});
 	}
+});
+
+$("#togglePlus").on("click", function(event) {
+	event.stopPropagation();
+	$("#newItem").fadeToggle();
 });
