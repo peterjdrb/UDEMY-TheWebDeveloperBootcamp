@@ -1,5 +1,6 @@
 body {
 	background-color: #87cefa;
+	font-size: 20px;
 }
 
 #toDoList {
@@ -10,4 +11,8 @@ body {
 .done {
 	text-decoration: line-through;
 	color: gray;
+}
+
+.item {
+	list-style-type: none;
 }

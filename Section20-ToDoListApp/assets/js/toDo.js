@@ -1,10 +1,19 @@
-$("#newItem").keypress(function(event){
+$("#newItem").on("keypress", function(event){
 	if (event.key === "Enter") {
-		$("#itemList").append("<li id='item'>" + $(this).val());
+		$("#itemList").append("<li id='item' class='item'><span>X </span>" + $(this).val());
 		$(this).val("");
-		$("li").last().click(function(){
-			console.log("item clicked");
+
+		var itemList = $("li").last();
+
+		itemList.on("click", function(){
 			$(this).toggleClass("done");
-		})
+		});
+
+		itemList.find("span").on("click", function(event){
+			event.stopPropagation();
+			$(this).parent().fadeOut(250, function(){
+				$(this).remove()
+			});
+		});
 	}
-})
+});
