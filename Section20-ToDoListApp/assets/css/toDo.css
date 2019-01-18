@@ -1,7 +1,10 @@
 body {
 	background: #fc00ff;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #00dbde, #fc00ff);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #00dbde, #fc00ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: -moz-linear-gradient(to right, #00dbde, #fc00ff); /* FF3.6+ */
+	background: -webkit-gradient(to right, #00dbde, #fc00ff); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(to right, #00dbde, #fc00ff); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(to right, #00dbde, #fc00ff); /* Opera 11.10+ */
+	background: -ms-linear-gradient(to right, #00dbde, #fc00ff); /* IE10+ */
 }
 
 h1 {
@@ -83,4 +86,4 @@ li:nth-child(even) {
 .done {
 	text-decoration: line-through;
 	color: gray;
-}
+}*/

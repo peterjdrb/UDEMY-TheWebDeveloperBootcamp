@@ -11,7 +11,7 @@ $("#newItem").on("keypress", function(event){
 
 		itemList.find("span").on("click", function(event){
 			event.stopPropagation();
-			$(this).parent().fadeOut(100, function(){
+			$(this).parent().fadeOut(250, function(){
 				$(this).remove();
 			});
 		});
