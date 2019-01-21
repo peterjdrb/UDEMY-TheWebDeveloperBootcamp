@@ -3,30 +3,59 @@
 <head>
 	<meta charset="utf-8">
 	<title>ToDo List</title>
-	<script type="text/javascript" src="assets/js/lib/jquery-3.3.1.min.js"></script>
-	<script type="text/paperscript" canvas="myCanvas">
-		// Create a Paper.js Path to draw a line into it:
-		var path = new Path();
-		// Give the stroke a color
-		path.strokeColor = 'red';
-		var start = new Point(0, 100);
-		// Move to start and draw a line from there
-		path.moveTo(start);
-		// Note the plus operator on Point objects.
-		// PaperScript does that for us, and much more!
-		path.lineTo(start + [ 200, -100 ]);
-
-		var myCircle = new Path.Circle(new Point(100, 100), 50);
-		myCircle.fillColor = 'green';
-
-		var myCircle2 = new Path.Circle(new Point(250, 250), 100);
-		myCircle2.fillColor = 'blue';
-	</script>
 	<script type="text/javascript" src="assets/js/lib/paper-full.js"></script>
-	<link 
-		rel="stylesheet" 
-		href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
-		integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js"></script>
+	<script type="text/paperscript" canvas="myCanvas">
+
+		var circles = [];
+		var howls = {};
+		var sounds = ['assets/sounds/bubbles.mp3', 'assets/sounds/corona.mp3', 'assets/sounds/bubbles.mp3', 'assets/sounds/clay.mp3',
+				'assets/sounds/confetti.mp3', 'assets/sounds/corona.mp3', 'assets/sounds/dotted-spiral.mp3', 'assets/sounds/flash-1.mp3',
+				'assets/sounds/flash-2.mp3', 'assets/sounds/flash-3.mp3', 'assets/sounds/glimmer.mp3', 'assets/sounds/moon.mp3',
+				'assets/sounds/pinwheel.mp3', 'assets/sounds/piston-1.mp3', 'assets/sounds/piston-2.mp3', 'assets/sounds/piston-3.mp3',
+				'assets/sounds/prism-1.mp3', 'assets/sounds/prism-2.mp3', 'assets/sounds/prism-3.mp3', 'assets/sounds/splits.mp3',
+				'assets/sounds/squiggle.mp3', 'assets/sounds/strike.mp3', 'assets/sounds/suspension.mp3', 'assets/sounds/timer.mp3',
+				'assets/sounds/ufo.mp3', 'assets/sounds/veil.mp3', 'assets/sounds/wipe.mp3', 'assets/sounds/zig-zag.mp3'];
+
+		var howls = {};
+			for (var i=0; i<sounds.length; i++) {
+			    howls[sounds[i]] = new Howl({
+			        src: [sounds[i]]
+			    });
+			}
+
+		function onKeyDown(event) {
+			var soundFile = sounds[Math.floor(Math.random() * sounds.length)];
+    		howls[soundFile].play();
+			//Random Starting Point
+			var maxPoint = new Point(view.size.width, view.size.height);
+			var randomPoint = Point.random();
+			var point = maxPoint*randomPoint;
+			var radius = 150;
+
+			// When a key is pressed, create a new circle
+			var animatedCircle = new Path.Circle(point, 200);
+			animatedCircle.fillColor = 'green';
+			circles.push(animatedCircle);
+
+		}
+
+		function onFrame(event) {
+			for (var i = 0; i < circles.length; i++){
+				circles[i].fillColor.hue += 3;
+				circles[i].scale(0.93);
+				    if(circles[i].area < 1){
+				      circles[i].remove(); // remove the circle from the canvas
+				      circles.splice(i, 1); // remove the circle from the array
+				      
+				    }
+
+			}
+			console.log(circles.length)
+		}
+
+	</script>
+
 	<link rel="stylesheet" type="text/css" href="assets/css/Patatap.css">
 </head>
 <body>
