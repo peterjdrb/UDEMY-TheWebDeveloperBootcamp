@@ -4,7 +4,7 @@ function average (scoreArr) {
     
     scoreArr.forEach( function(score){
         totalScore+= score;
-    })
+    });
     
     averageScore = totalScore / scoreArr.length;
     
