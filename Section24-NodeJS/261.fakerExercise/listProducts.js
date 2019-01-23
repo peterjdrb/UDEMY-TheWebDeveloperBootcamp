@@ -1,4 +1,4 @@
-var faker = require("faker")
+var faker = require("faker");
 
 console.log("==========================");
 console.log("WELCOME TO MY SHOP!");
@@ -16,4 +16,4 @@ for (var i = 0; i < 10; i++){
 
 items.forEach (function(item) {
     console.log(item.productName + " - " + item.price);
-})
+});
