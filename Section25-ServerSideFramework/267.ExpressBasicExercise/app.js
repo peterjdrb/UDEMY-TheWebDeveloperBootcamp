@@ -10,14 +10,16 @@ app.get("/speak/:animal", function(req, res) {
     var sounds = {
         pig:"Oink",
         cow: "Moo",
-        dog:"Woof Woof!"
+        dog:"Woof Woof!",
+        cat: "MEOW!"
     };
     
     var sound = sounds[animal];
     if (sound === undefined) {
         res.send("I don't know what sound a  " + animal + " makes!");
+    } else {
+        res.send("The " + animal + " says '" + sound + "'");
     }
-    res.send("The " + animal + " says '" + sound + "'");
 });
 
 app.get("/repeat/:word/:number", function(req, res){
