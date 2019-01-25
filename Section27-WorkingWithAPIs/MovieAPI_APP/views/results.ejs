@@ -1,0 +1,19 @@
+<h1>Results Page</h1>
+<h2>Number of results: <%= results["Search"].length %></h2>
+
+<table>
+    <tr>
+        <td>Title</td>
+        <td>Year</td>
+        <td>Type</td>
+    </tr>
+    <% results["Search"].forEach(function(movie) { %>
+        <tr>
+            <td> <%= movie.Title%> </td>
+            <td> <%= movie.Year%> </td>
+            <td> <%= movie.Type%> </td>
+        </tr>
+    <% }); %>
+</table>
+
+<a href="/search">Search Again!</a>
