@@ -7,7 +7,7 @@ request("https://jsonplaceholder.typicode.com/posts?userId=1", function(error, r
        parsedData.forEach(function(post) {
           console.log("Title: " + post.title);
           console.log("Post: " + post.body.replace(/(\r\n|\n|\r)/gm, " "));
-          console.log("************************************************************")
+          console.log("************************************************************");
        });
        
    } else {

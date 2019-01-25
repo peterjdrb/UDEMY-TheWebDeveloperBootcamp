@@ -1,7 +1,7 @@
 var express = require("express");
 var app = express();
 var request = require("request");
-const apiKey = "thewdb"
+const apiKey = "thewdb";
 app.set("view engine", "ejs");
 
 app.get("/", function(req, res) {
@@ -17,8 +17,8 @@ app.get("/results", function(req, res) {
     var url = "http://www.omdbapi.com/?s=" + filmName + "&apikey=" + apiKey;
     request(url, function(error, response, body){
         if(!error && response.statusCode === 200) {
-            var results = JSON.parse(body)
-            console.log(results)
+            var results = JSON.parse(body);
+            console.log(results);
             res.render("results", {results:results});
         }
     });
