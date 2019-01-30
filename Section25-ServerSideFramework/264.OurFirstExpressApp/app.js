@@ -13,7 +13,7 @@ app.get("/dogs", function(req, res){
     res.send("<h1>WOOF!</h1>");
 });
 
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(3000, function(){
     console.log(process.env.PORT);
     console.log(process.env.IP);
 });
