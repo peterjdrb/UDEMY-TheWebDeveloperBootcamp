@@ -37,6 +37,6 @@ app.get("*", function(req, res){
    res.send("Sorry page not found...What are you doing with your life?"); 
 });
 
-app.listen(process.env.PORT, process.env.IP, function(){
-    console.log('https://udemy-peterjdrb.c9users.io/');
+app.listen(3000, function(){
+    console.log('localhost:3000/');
 });
