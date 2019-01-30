@@ -14,6 +14,5 @@ app.get("/dogs", function(req, res){
 });
 
 app.listen(3000, function(){
-    console.log(process.env.PORT);
-    console.log(process.env.IP);
+    console.log("localhost:3000/");
 });
